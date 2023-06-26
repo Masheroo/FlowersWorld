@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block stylesheets %}
+        {# 'app' должен совпадать с первым аргументом addEntry() в webpack.config.js #}
+        {{ encore_entry_link_tags('app') }}
+
+        <!-- Отображает тег ссылки (если ваш модуль требует любого CSS) -->
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    {% endblock %}
+    <title>О нас</title>
+</head>
+<body>
+{{ include('components/header.html.twig') }}
+<section class="page-title">
+    <h1>{{ page_name }}</h1>
+</section>
+<div class="container">
+    <section class="about-us">
+        <img src="{{ asset('img/logo.png') }}" alt="logo">
+        <p>Lorem ipsum dolor sit amet consectetur. In orci vitae diam ornare convallis quam bibendum. Condimentum auctor
+            tempor tortor ut non vitae imperdiet. Et sit ornare elementum enim adipiscing aliquam mi adipiscing.
+            Tristique fames sed facilisis ut phasellus lectus varius faucibus.</p>
+
+    </section>
+</div>
+</body>
+</html>
