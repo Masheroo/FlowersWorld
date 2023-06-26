@@ -6,7 +6,12 @@
         <a href="">Где нас найти?</a>
     </nav>
     <nav class="account">
-        <a href="">Регистрация</a>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {{ app.user.name + '' + app.user.surname }}
+            <a href="">Выйти</a>
+        {% else %}
+        <a href="{{ path('app_register') }}">Регистрация</a>
         <a href="">Войти</a>
+        {% endif %}
     </nav>
 </header>
