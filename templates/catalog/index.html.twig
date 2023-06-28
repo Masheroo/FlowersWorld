@@ -9,27 +9,18 @@
 
     </div>
     <div class="catalog">
+        {% for product in products %}
         <div class="item">
-            <img src="{{ asset('img/flower.png') }}" alt="">
+            <img src="{{ asset('upload/images/' ~ product.image) }}" alt="">
             <div class="info">
-                <a href="#">Джульетта</a>
-                <p>от 3320 руб.</p>
-                <button>
-                    В корзину
-                </button>
+                <a class="title" href="#">{{ product.name}}</a>
+                <p>от {{ product.cost|slice(0,-2) }} руб.</p>
+                <a class="btn" href="{{ path('app_product', {id: product.id}) }}">
+                   Подробнее
+                </a>
             </div>
         </div>
-        <div class="item">
-            <img src="{{ asset('img/flower.png') }}" alt="">
-            <div class="info">
-                <a href="#">Джульетта</a>
-                <p>от 3320 руб.</p>
-                <button>
-                    В корзину
-                </button>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 </section>
 

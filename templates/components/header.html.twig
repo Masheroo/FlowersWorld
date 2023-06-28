@@ -3,15 +3,16 @@
         <img src="{{ asset('img/logo.png') }}" alt="logo">
         <a href="{{ path('about_us') }}">О нас</a>
         <a href="{{ path('catalog') }}">Каталог</a>
-        <a href="">Где нас найти?</a>
+        <a href="{{ path('app_where_find_us') }}">Где нас найти?</a>
     </nav>
     <nav class="account">
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {{ app.user.name + '' + app.user.surname }}
-            <a href="">Выйти</a>
+            <a class="cart-icon" href="{{ path('app_cart') }}"><img src="{{ asset('img/cart.png') }}" alt="cart"></a>
+            {{ app.user.name ~ " " ~ app.user.surname}}
+            <a href="{{ path('app_logout') }}">Выйти</a>
         {% else %}
         <a href="{{ path('app_register') }}">Регистрация</a>
-        <a href="">Войти</a>
+        <a href="{{ path('app_login') }}">Войти</a>
         {% endif %}
     </nav>
 </header>

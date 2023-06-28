@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{page_name}}{% endblock %}
+
+{% block body %}
+    <section id="product">
+        <img src="{{ asset('upload/images/' ~ product.image) }}" alt="img">
+        <div class="info">
+            <h1>{{ product.name }}</h1>
+            <p>от {{ product.cost|slice(0,-2) }} руб.</p>
+            <p>Категория: {{ product.category }}</p>
+            <p>Страна: {{ product.country }}</p>
+            <p>Цвет: {{ product.color }}</p>
+            <p>Количество: {{ product.count }}</p>
+        </div>
+    </section>
+{% endblock %}

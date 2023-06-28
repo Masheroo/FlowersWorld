@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ page_name }}{% endblock %}
+
+
+{% block body %}
+
+    {#    {{ form_errors(loginForm) }} #}
+
+    {#    {{ form_start(loginForm, {'attr': {'id': 'registration_form'}}) }} #}
+    {#        {{ form_row(loginForm.username, {'attr': {'name': '_username123'}}) }} #}
+    {#        {{ form_row(loginForm._password) }} #}
+    {#        {{ form_row(loginForm.btn) }} #}
+    {#    {{ form_end(loginForm) }} #}
+    <form action="{{ path('app_login') }}" method="post" id="login_form">
+        <div>
+            <label for="_username">
+                Логин
+            </label>
+            <input type="text" name="_username" id="">
+        </div>
+
+        <div>
+            <label for="_password">
+                Пароль
+            </label>
+            <input type="password" name="_password" id="">
+        </div>
+        <input type="submit" class="btn">
+    </form>
+
+{% endblock %}
